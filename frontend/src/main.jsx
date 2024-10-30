@@ -4,6 +4,7 @@ import '@cloudscape-design/global-styles/index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './components/App'
 import './index.css'
+import Home from './components/Home'
 
 const router = createBrowserRouter([
   {
@@ -12,7 +13,27 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Home</h1>
+        element: <Home />
+      },
+      {
+        path: '/home',
+        element: <Home />
+      },
+      {
+        path: '/buscar-tutoria',
+        element: <h1>Buscar tutoria</h1>
+      },
+      {
+        path: '/historial-tutorias',
+        element: <h1>Historial de tutorias</h1>
+      },
+      {
+        path: '/tutorias-agendadas',
+        element: <h1>Tutorias agendadas</h1>
+      },
+      {
+        path: '/notificaciones',
+        element: <h1>Notificaciones</h1>
       }
     ]
   }

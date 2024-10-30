@@ -8,15 +8,22 @@ import {
 import { I18nProvider } from '@cloudscape-design/components/i18n'
 import messages from '@cloudscape-design/components/i18n/messages/all.en'
 import TopNavigation from '@cloudscape-design/components/top-navigation'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 const LOCALE = 'en'
 
 export default function App() {
-  const [isNavigationOpen, setIsNavigationOpen] = useState(false)
+  const [isNavigationOpen, setIsNavigationOpen] = useState(true)
+  const navigate = useNavigate() // Hook de navegación de react-router
 
   const handleNavigationToggle = () => {
     setIsNavigationOpen(!isNavigationOpen)
+  }
+
+  // Función de navegación personalizada para enlaces
+  const handleNavigation = (event, path) => {
+    event.preventDefault()
+    navigate(path)
   }
 
   return (
@@ -24,7 +31,8 @@ export default function App() {
       <TopNavigation
         identity={{
           href: '#',
-          title: 'Gestor de tutorias'
+          title: 'Gestor de tutorias',
+          onFollow: (event) => handleNavigation(event, '/home')
         }}
         utilities={[
           {
@@ -33,7 +41,8 @@ export default function App() {
             title: 'Notifications',
             ariaLabel: 'Notifications (unread)',
             badge: true,
-            disableUtilityCollapse: false
+            disableUtilityCollapse: false,
+            onClick: () => handleNavigation(event, '/notificaciones')
           },
           {
             type: 'menu-dropdown',
@@ -69,13 +78,31 @@ export default function App() {
         navigation={
           <SideNavigation
             header={{
-              href: '#',
-              text: 'Tutorías'
+              href: '/home',
+              text: 'Tutorías',
+              onFollow: (event) => handleNavigation(event, '/home')
             }}
             items={[
-              { type: 'link', text: `Buscar tutoría o crear nueva`, href: `#` },
-              { type: 'link', text: `Historial de tutorías`, href: `#` },
-              { type: 'link', text: `Mis tutorías agendadas`, href: `#` }
+              {
+                type: 'link',
+                text: `Buscar tutoría o crear nueva`,
+                href: `/buscar-tutoria`,
+                onFollow: (event) => handleNavigation(event, '/buscar-tutoria')
+              },
+              {
+                type: 'link',
+                text: `Historial de tutorías`,
+                href: `/historial-tutorias`,
+                onFollow: (event) =>
+                  handleNavigation(event, '/historial-tutorias')
+              },
+              {
+                type: 'link',
+                text: `Mis tutorías agendadas`,
+                href: `/tutorias-agendadas`,
+                onFollow: (event) =>
+                  handleNavigation(event, '/tutorias-agendadas')
+              }
             ]}
           />
         }
