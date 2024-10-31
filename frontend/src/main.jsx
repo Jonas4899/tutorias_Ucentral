@@ -5,6 +5,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './components/App'
 import './index.css'
 import Home from './components/Home'
+import Notifications from './components/Notifications'
+import BuscarTutoria from './components/BuscarTutoria'
+import CrearTutoria from './components/CrearTutoria'
+import ConfirmarTutoria from './components/ConfirmarTutoria'
+import ExitoTutoria from './components/ExitoTutoria'
 
 const router = createBrowserRouter([
   {
@@ -21,7 +26,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/buscar-tutoria',
-        element: <h1>Buscar tutoria</h1>
+        element: <BuscarTutoria />
+      },
+      {
+        path: '/crear-tutoria',
+        element: <CrearTutoria />
+      },
+      {
+        path: '/confirmar-tutoria',
+        element: <ConfirmarTutoria />
+      },
+      {
+        path: '/exito-tutoria',
+        element: <ExitoTutoria />
       },
       {
         path: '/historial-tutorias',
@@ -33,7 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/notificaciones',
-        element: <h1>Notificaciones</h1>
+        element: <Notifications />
       }
     ]
   }

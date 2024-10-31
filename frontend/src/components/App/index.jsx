@@ -107,7 +107,11 @@ export default function App() {
           />
         }
         content={
-          <ContentLayout header={<Header variant="h1">Page header</Header>}>
+          <ContentLayout
+            header={
+              <Header variant="h1">Bienvenido a tu portal de tutorías</Header>
+            }
+          >
             <Outlet />
           </ContentLayout>
         }

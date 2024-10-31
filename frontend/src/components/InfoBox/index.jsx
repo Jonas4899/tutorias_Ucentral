@@ -1,18 +1,13 @@
-import Container from "@cloudscape-design/components/container";
-import Header from "@cloudscape-design/components/header";
-import SpaceBetween from "@cloudscape-design/components/space-between";
-import Button from "@cloudscape-design/components/button";
-import Box from "@cloudscape-design/components/box";
+import Container from '@cloudscape-design/components/container'
+import Header from '@cloudscape-design/components/header'
+import SpaceBetween from '@cloudscape-design/components/space-between'
 
-export default function InfoBox({buttons, children}) {
-    return (
-        <Container
+export default function InfoBox({ title, buttons, children }) {
+  return (
+    <Container
       header={
-        <Header
-          variant="h2"
-          actions={buttons}
-        >
-          Tema de la tutoría: Matematicas avanzadas
+        <Header variant="h2" actions={buttons}>
+          {title}
         </Header>
       }
     >
@@ -20,5 +15,5 @@ export default function InfoBox({buttons, children}) {
         {children}
       </SpaceBetween>
     </Container>
-    )
+  )
 }
