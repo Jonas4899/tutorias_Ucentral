@@ -1,6 +1,5 @@
 package com.tutorias.ucentral.backend.entidades;
 
-import java.util.List;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
