@@ -17,6 +17,6 @@ public class Administrador extends Usuarios {
     @Column(name = "ADM_ID", nullable = false)
     private long id;
 
-    @Column(name = "ADM_NOMBBRE",nullable = false)
+    @Column(name = "ADM_USER",nullable = false)
     private String username;
 }

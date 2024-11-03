@@ -22,7 +22,7 @@ public class Materias {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(
-        name = "materia_estudiante",
+        name = "estudiante_materia",
         joinColumns = @JoinColumn(name = "mat_id", referencedColumnName = "MAT_ID"),
         inverseJoinColumns = @JoinColumn(name = "est_id", referencedColumnName = "EST_ID")
     )

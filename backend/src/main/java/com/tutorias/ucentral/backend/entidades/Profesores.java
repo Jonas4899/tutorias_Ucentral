@@ -1,5 +1,7 @@
 package com.tutorias.ucentral.backend.entidades;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -17,8 +19,8 @@ public class Profesores extends Usuarios{
     @Column(name = "PRO_ID",nullable = false)
     private String id;
 
-    @Column(name = "PRO_NOMBRE",nullable = false)
-    private String nombre;
+    @Column(name = "PRO_ESPECIALIDAD",nullable = false)
+    private String especialidad;
 
-
+    
 }

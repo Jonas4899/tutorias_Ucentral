@@ -16,7 +16,7 @@ public class Horarios implements Serializable{
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_HORARIOS")
-    @SequenceGenerator(name = "SEQ_HORARIOS",sequenceName = "SEQ_ESTUDIANTES",allocationSize = 1)
+    @SequenceGenerator(name = "SEQ_HORARIOS",sequenceName = "SEQ_HORARIOS",allocationSize = 1)
     @Column(name = "HOR_SERIAL",nullable = false)
     private long serial;
 

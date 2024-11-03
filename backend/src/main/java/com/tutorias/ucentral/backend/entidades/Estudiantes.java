@@ -24,4 +24,11 @@ public class Estudiantes extends Usuarios{
     @ManyToMany(mappedBy = "estudiantes", fetch = FetchType.EAGER)
     private List<Materias> materias;
 
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @JoinTable(
+        name = "estudiante_tutoria",
+        joinColumns = @JoinColumn(name = "est_id", referencedColumnName = "EST_ID"),
+        inverseJoinColumns = @JoinColumn(name = "tut_id", referencedColumnName = "TUT_ID")
+    )
+    private List<Tutorias> tutorias;
 }
