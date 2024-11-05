@@ -7,17 +7,12 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 
-@Inheritance
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "Estudiantes")
-@Table(name = "ESTUDIANTES")
+@Entity
+@DiscriminatorValue("ESTUDIANTE") 
 public class Estudiantes extends Usuarios{
     
-    @Id
-    @Column(name = "EST_ID",nullable = false)
-    private String id;
-
     @Column(name = "EST_MATRICULA",nullable = false)
     private String matricula;
 
@@ -27,7 +22,7 @@ public class Estudiantes extends Usuarios{
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(
         name = "estudiante_tutoria",
-        joinColumns = @JoinColumn(name = "est_id", referencedColumnName = "EST_ID"),
+        joinColumns = @JoinColumn(name = "USU_ID", referencedColumnName = "USU_ID"),
         inverseJoinColumns = @JoinColumn(name = "tut_id", referencedColumnName = "TUT_ID")
     )
     private List<Tutorias> tutorias;

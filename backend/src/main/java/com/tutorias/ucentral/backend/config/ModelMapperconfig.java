@@ -1,4 +1,4 @@
-package com.tutorias.ucentral.config;
+package com.tutorias.ucentral.backend.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.modelmapper.ModelMapper;

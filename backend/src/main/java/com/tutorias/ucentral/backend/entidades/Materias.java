@@ -24,7 +24,7 @@ public class Materias {
     @JoinTable(
         name = "estudiante_materia",
         joinColumns = @JoinColumn(name = "mat_id", referencedColumnName = "MAT_ID"),
-        inverseJoinColumns = @JoinColumn(name = "est_id", referencedColumnName = "EST_ID")
+        inverseJoinColumns = @JoinColumn(name = "USU_ID", referencedColumnName = "USU_ID")
     )
     private List<Estudiantes> estudiantes;
 }
