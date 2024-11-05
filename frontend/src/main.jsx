@@ -10,6 +10,13 @@ import BuscarTutoria from './components/BuscarTutoria'
 import CrearTutoria from './components/CrearTutoria'
 import ConfirmarTutoria from './components/ConfirmarTutoria'
 import ExitoTutoria from './components/ExitoTutoria'
+import HistorialTutorias from './components/HistorialTutorias'
+import EvaluacionDocente from './components/EvaluacionDocente'
+import ExitoEvaluacion from './components/ExitoEvaluacion'
+import DetallesTutoria from './components/DetallesTutoria'
+import EditarTutoria from './components/EditarTutoria'
+import CancelarTutoria from './components/CancelarTutoria'
+import ExitoModificarTutoria from './components/Home/ExitoModificarTutoria'
 
 const router = createBrowserRouter([
   {
@@ -42,11 +49,35 @@ const router = createBrowserRouter([
       },
       {
         path: '/historial-tutorias',
-        element: <h1>Historial de tutorias</h1>
+        element: <HistorialTutorias />
+      },
+      {
+        path: '/calificar-profesor',
+        element: <EvaluacionDocente />
+      },
+      {
+        path: '/exito-evaluacion',
+        element: <ExitoEvaluacion />
       },
       {
         path: '/tutorias-agendadas',
         element: <h1>Tutorias agendadas</h1>
+      },
+      {
+        path: '/detalles-tutoria',
+        element: <DetallesTutoria />
+      },
+      {
+        path: '/editar-tutoria',
+        element: <EditarTutoria />
+      },
+      {
+        path: '/exito-modificar-tutoria',
+        element: <ExitoModificarTutoria />
+      },
+      {
+        path: '/cancelar-tutoria',
+        element: <CancelarTutoria />
       },
       {
         path: '/notificaciones',
